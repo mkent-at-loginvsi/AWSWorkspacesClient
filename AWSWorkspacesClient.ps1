@@ -78,11 +78,11 @@ Write-Host("Set Value of Edit 'Username'")
 Wait-Action { $mainWindow.FindFirstDescendant($cf.ByName("Username")) }
 $winElem_SetValueEditUsername = $mainWindow.FindFirstDescendant($cf.ByName("Username"))
 
-if ($winElem_SetValueEditPassword -ne $null){
-    $winElem_SetValueEditPassword.Patterns.Value.Pattern.SetValue("$Username")
+if ($winElem_SetValueEditUsername -ne $null){
+    $winElem_SetValueEditUsername.Patterns.Value.Pattern.SetValue("$Username")
 }else{
     Write-Host("Failed to set element value: $winElem_SetValueEditUsername")
-    Exit 1
+    #Exit 1
 }
 
 ###################
@@ -98,7 +98,7 @@ if ($winElem_SetValueEditPassword -ne $null){
     $winElem_SetValueEditPassword.Patterns.Value.Pattern.SetValue("$Password")
 }else{
     Write-Host("Failed to set element value: $winElem_SetValueEditPassword")
-    Exit 1
+    #Exit 1
 }
 
 ##############
@@ -113,7 +113,7 @@ if ($winElem_LeftClickButtonSignIn -ne $null){
     $LASTERRORCODE
 }else{
     Write-Host("Failed to find element.")
-    Exit 1
+    #Exit 1
 }
 #####################
 # Wait for Connection
